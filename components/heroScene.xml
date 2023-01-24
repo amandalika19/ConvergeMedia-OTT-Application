@@ -13,8 +13,8 @@
 
     <!-- Overhang Node -->
     <Overhang
-      showClock="true"
-      title="Hero-Grid-Channel" />
+      showClock="false"
+      logoUri="pkg:/images\overhang-logo.png"/>
 
     <!-- Details screen with play button -->
     <DetailsScreen
