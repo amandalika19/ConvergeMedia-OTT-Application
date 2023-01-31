@@ -6,3 +6,5 @@ out/
 .tags1
 .tags
 Makefile
+.gitignore
+.vscode/

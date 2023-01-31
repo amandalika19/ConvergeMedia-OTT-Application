@@ -73,7 +73,7 @@
       translation="[500, 800]"
       itemSpacings="[7, 16]" />
 
-    <!-- Overhang Node (has to be rendered after others) -->
+    <!-- Navigation Bar -->
     <Overhang
       showClock="true"
       title="Hero-Grid-Channel" />

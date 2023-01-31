@@ -12,6 +12,77 @@
       color="0x000000"
       ShadeOpacity="0.8" />
 
+    <!--Navigation Bar-->
+    <Rectangle 
+        id = "listContainer" 
+        height = "150" 
+        color = "0x00000" 
+        opacity = "0.4" 
+        width = "10000"/>
+    <Group
+        id = "NavBar"
+        layoutDirection="horiz" 
+        itemSpacings="[1]" 
+        horizAlignment="left">
+      <Poster
+        id="testPoster"
+        uri="pkg:/images\navbar-logo.png"
+        translation="[10,50]" />
+      <LabelList
+          id = "Home"
+          translation = "[375,50]"
+          itemSize = "[140,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "HomeNode" role = "content" >
+          <ContentNode title = "Home"/>
+        </ContentNode>
+      </LabelList>
+      <LabelList
+          id = "Show"
+          translation = "[580,50]"
+          itemSize = "[150,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "ShowNode" role = "content" >
+          <ContentNode title = "Shows"/>
+        </ContentNode>
+      </LabelList>
+      <LabelList
+          id = "Film"
+          translation = "[795,50]"
+          itemSize = "[140,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "FilmsNode" role = "content" >
+          <ContentNode title = "Films"/>
+        </ContentNode>
+      </LabelList>
+       <LabelList
+          id = "About"
+          translation = "[1000,50]"
+          itemSize = "[230,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "AboutNode" role = "content" >
+          <ContentNode title = "About Us"/>
+        </ContentNode>
+      </LabelList>
+      
+    </Group> 
+
     <!-- The main content -->
     <RowList
 	    id="RowList"

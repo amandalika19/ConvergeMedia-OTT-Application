@@ -11,11 +11,6 @@
       visible="true"
       translation="[0,0]"/>
 
-    <!-- Overhang Node -->
-    <Overhang
-      showClock="false"
-      logoUri="pkg:/images\overhang-logo.png"/>
-
     <!-- Details screen with play button -->
     <DetailsScreen
       id="DetailsScreen"
