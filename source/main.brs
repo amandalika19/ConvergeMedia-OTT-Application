@@ -14,7 +14,7 @@ sub Main(input as Dynamic)
   ' Call the service provider API to look up
   ' the content details, or right data from feed for id
   if input <> invalid
-    print "Received Input -- write code here to check it!"
+    print "Received Input!"
     if input.reason <> invalid
       if input.reason = "ad" then
         print "Channel launched from ad click"
@@ -27,17 +27,17 @@ sub Main(input as Dynamic)
       'launch/prep the content mapped to the contentID here
     end if
   end if
-  showHeroScreen()
+  showHomeScreen()
 end sub
 
 ' Initializes the scene and shows the main homepage.
 ' Handles closing of the channel.
-sub showHeroScreen()
-  print "main.brs - [showHeroScreen]"
+sub showHomeScreen()
+  print "main.brs - [showHomeScreen]"
   screen = CreateObject("roSGScreen")
   m.port = CreateObject("roMessagePort")
   screen.setMessagePort(m.port)
-  scene = screen.CreateScene("HeroScene")
+  scene = screen.CreateScene("ChannelStartup")
   screen.show()
 
   while(true)
