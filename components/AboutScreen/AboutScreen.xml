@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
 
-<component name="HomeScreen" extends="Group" initialFocus="itemMask">
+<component name="AboutScreen" extends="Group" initialFocus="itemMask">
 
   <children>
 
@@ -13,15 +13,15 @@
       color="0x000000"
       ShadeOpacity="0.9" />
 
-      <LayoutGroup
+       <LayoutGroup
             translation = "[ 0, 0 ]"
             itemSpacings = "[ 0 ]"
         >
             <Label 
-                text="Home" />
+                text="About Us!" />
 
             <RowList 
-                id = "homerow" 
+                id = "aboutrow" 
                 translation = "[ 0, 0 ]" 
                 itemComponentName = "RowListItem" 
                 numRows = "4" 
@@ -32,6 +32,7 @@
                 vertFocusAnimationStyle = "fixedFocusWrap" 
                 rowFocusAnimationStyle = "fixedFocusWrap" />
         </LayoutGroup>
+
 
   </children>
 

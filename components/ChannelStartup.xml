@@ -10,12 +10,35 @@
       id = "NavBar"
       visible = "true" />
 
-    <!-- RowList on ChannelStartup -->
+    <!-- HomeScreen on ChannelStartup -->
     <HomeScreen
       id="HomeScreen"
       visible="true"
       translation="[0,150]"/>
 
+     <!-- DetailsScreen on ChannelStartup -->
+    <DetailsScreen
+      id="DetailsScreen"
+      visible="false"
+      translation="[0,150]"/>
+
+    <!-- AboutScreen on ChannelStartup -->
+    <AboutScreen
+      id="AboutScreen"
+      visible="false"
+      translation="[0,150]"/>
+
+     <!-- AboutScreen on ChannelStartup -->
+    <FilmScreen
+      id="FilmScreen"
+      visible="false"
+      translation="[0,150]"/>
+
+     <!-- AboutScreen on ChannelStartup -->
+    <ShowScreen
+      id="ShowScreen"
+      visible="false"
+      translation="[0,150]"/>
     <!-- Animation to fade the ScreenFade in/out -->
     <ParallelAnimation id="FadeIn">
       <Animation

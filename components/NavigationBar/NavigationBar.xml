@@ -6,20 +6,17 @@
   <children>
     <!--Navigation Bar-->
     <Rectangle 
-        id = "listContainer" 
-        height = "150" 
-        color = "0x00000" 
-        opacity = "0.4" 
-        width = "10000"/>
+        id = "navContainer" 
+        color = "0x00000" />
     <Group
         id = "NavBar">
       <Poster
-        id="testPoster"
+        id="logo"
         uri="pkg:/images\navbar-logo.png"
         translation="[10,50]" />
       <LabelList
           id = "Home"
-          translation = "[375,50]"
+          translation = "[390,50]"
           itemSize = "[140,50]"
           font = "font:LargeBoldSystemFont"
           focusedFont="font:LargeBoldSystemFont"
@@ -32,7 +29,7 @@
       </LabelList>
       <LabelList
           id = "Show"
-          translation = "[580,50]"
+          translation = "[595,50]"
           itemSize = "[150,50]"
           font = "font:LargeBoldSystemFont"
           focusedFont="font:LargeBoldSystemFont"
@@ -45,7 +42,7 @@
       </LabelList>
       <LabelList
           id = "Film"
-          translation = "[795,50]"
+          translation = "[810,50]"
           itemSize = "[140,50]"
           font = "font:LargeBoldSystemFont"
           focusedFont="font:LargeBoldSystemFont"
@@ -58,7 +55,7 @@
       </LabelList>
        <LabelList
           id = "About"
-          translation = "[1000,50]"
+          translation = "[1015,50]"
           itemSize = "[230,50]"
           font = "font:LargeBoldSystemFont"
           focusedFont="font:LargeBoldSystemFont"
