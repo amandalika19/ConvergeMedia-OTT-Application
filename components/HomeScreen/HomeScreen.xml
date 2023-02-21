@@ -13,28 +13,11 @@
       color="0x000000"
       ShadeOpacity="0.9" />
 
-      <LayoutGroup
-            translation = "[ 0, 0 ]"
-            itemSpacings = "[ 0 ]"
-        >
-            <Label 
-                text="Home" />
-
-            <RowList 
-                id = "homerow" 
-                translation = "[ 0, 0 ]" 
-                itemComponentName = "RowListItem" 
-                numRows = "4" 
-                itemSize = "[ 1608, 308 ]" 
-                rowItemSize = "[ [536, 308] ]" 
-                itemSpacing = "[ 0, 0 ]" 
-                drawFocusFeedback = "false" 
-                vertFocusAnimationStyle = "fixedFocusWrap" 
-                rowFocusAnimationStyle = "fixedFocusWrap" />
-        </LayoutGroup>
-
   </children>
 
   <script type="text/brightscript" uri="pkg:/components/HomeScreen/HomeScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
 
 </component>

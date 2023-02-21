@@ -36,6 +36,5 @@
 
   </children>
 
-  <script type="text/brightscript" uri="pkg:/components/HomeScreen/HomeScreen.brs" />
 
 </component>
