@@ -11,11 +11,10 @@
         <RowList
             itemComponentName="RowListItemComponent"
             id="rowList"
-            translation="[0,100]"
+            translation="[50,200]"
             numRows="5"
             rowItemSize="[[451,334]]"
             rowHeights="[448]"
-            itemSpacing="[20,20, 20]"
             itemSize="[1980,400]"
             rowLabelOffset="[[80,20]]"
             focusXOffset="[20]"
@@ -42,4 +41,4 @@
 			translation="[130,220]"
 	    />
     </children>
-</component>
+</component> 

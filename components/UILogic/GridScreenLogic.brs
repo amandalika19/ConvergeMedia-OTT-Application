@@ -1,5 +1,14 @@
+sub InitGridScreen()
+    m.GridScreen = CreateObject("roSGNode", "GridScreen")
+end sub
+
 
 sub ShowGridScreen()
-    m.GridScreen = CreateObject("roSGNode", "GridScreen")
+    print "show grid screen"
     ShowScreen(m.GridScreen) ' show GridScreen
 end sub
+
+sub RemoveGridScreen()
+    CloseScreen(m.GridScreen)
+end sub
+

@@ -1,4 +1,4 @@
-sub Init()
+sub init()
     m.rowList = m.top.FindNode("rowList")
     m.rowList.SetFocus(true)
     ' label with item description
@@ -13,6 +13,7 @@ sub OnItemFocused() ' invoked when another item is focused
     focusedIndex = m.rowList.rowItemFocused ' get position of focused item
     row = m.rowList.content.GetChild(focusedIndex[0]) ' get all items of row
     item = row.GetChild(focusedIndex[1]) ' get focused item
+
     ' update description label with description of focused item
     ' m.descriptionLabel.text = item.description
     ' update title label with title of focused item

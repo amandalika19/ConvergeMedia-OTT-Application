@@ -2,7 +2,9 @@ sub InitScreenStack()
     m.screenStack = []
 end sub
 
+
 sub ShowScreen(node as Object)
+
     prev = m.screenStack.Peek() ' take current screen from screen stack but don't delete it
     if prev <> invalid
         prev.visible = false ' hide current screen if it exist
@@ -11,7 +13,8 @@ sub ShowScreen(node as Object)
     m.top.AppendChild(node)
     node.visible = true
     node.SetFocus(true)
-    m.screenStack.Push(node) ' add new screen to the screen stack
+    m.screenStack.Push(node)
+
 end sub
 
 sub CloseScreen(node as Object)
@@ -28,3 +31,4 @@ sub CloseScreen(node as Object)
         end if
     end if
 end sub
+

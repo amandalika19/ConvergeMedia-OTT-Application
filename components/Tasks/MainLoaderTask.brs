@@ -59,6 +59,5 @@ function GetItemData(video as Object) as Object
         ' populate length of content to be displayed on the GridScreen
         item.length = video.content.duration
     end if
-    print(item)
     return item
 end function
