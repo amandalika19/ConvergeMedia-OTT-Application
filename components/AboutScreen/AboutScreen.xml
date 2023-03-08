@@ -36,19 +36,6 @@
           <Label id="texta3" text="We believe that the Black community deserves authentic representation," fontSize = "20" translation="[50,510]" />
           <Label id="texta4" text="a focus on our community’s issues, and equitable access to elected officials," fontSize = "20" translation="[50,550]" />
           <Label id="texta5" text="leadership, and governmental information." fontSize = "20" translation = "[50,590]" />
-          
-          <button id="Donate" text="SUPPORT INDEPENDENT BLACK MEDIA" 
-            translation = "[50,800]" 
-            font="font:MediumBoldSystemFont" 
-            horizAlign="center" 
-            vertAlign="center" 
-            focusedBitmapUri="pkg:/images/Donate-button.png" 
-            unFocusedBitmapUri="pkg:/images/Donate-button.png" 
-            backgroundColor="#FF0000" />
-        </Group>
-
-        <Group >
-          <Label id="textb1" text="GET YOUR DAILY BRIEFING" fontSize = "80" color = "#007FFF" translation = "[950,1100]" textStyle = "bold" />
         </Group>
   </children>
 
