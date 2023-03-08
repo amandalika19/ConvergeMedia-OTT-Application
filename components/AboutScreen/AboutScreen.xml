@@ -32,10 +32,10 @@
         <Group >
           <Poster id="intro_picture" uri="pkg:/images/intro-picture.jpg" width = "1900" height = "1040" translation="[5,25]" />
           <Label id="texta1" text="CHANGING THE NARRATIVE" fontSize = "54" translation = "[50,410]" textStyle = "bold" />
-          <Label id="texta2" text="Content and local news specifically for the Northwest’s Black community." fontSize = "20" translation="[50,470]" />
-          <Label id="texta3" text="We believe that the Black community deserves authentic representation," fontSize = "20" translation="[50,510]" />
-          <Label id="texta4" text="a focus on our community’s issues, and equitable access to elected officials," fontSize = "20" translation="[50,550]" />
-          <Label id="texta5" text="leadership, and governmental information." fontSize = "20" translation = "[50,590]" />
+          <Label id="texta2" text="Content and local news specifically for the Northwest’s Black community." fontSize = "20" translation="[100,480]" />
+          <Label id="texta3" text="We believe that the Black community deserves authentic representation," fontSize = "20" translation="[150,530]" />
+          <Label id="texta4" text="a focus on our community’s issues, and equitable access to elected officials," fontSize = "20" translation="[200,580]" />
+          <Label id="texta5" text="leadership, and governmental information." fontSize = "20" translation = "[250,630]" />
         </Group>
 
         <LayoutGroup
@@ -53,6 +53,7 @@
               focusedIconUri="pkg:/images/Donate-button.png"
                   translation="[500, 800]" />
           </LayoutGroup>
+
   </children>
 
   <script type="text/brightscript" uri="pkg:/components/AboutScreen/AboutScreen.brs" />
