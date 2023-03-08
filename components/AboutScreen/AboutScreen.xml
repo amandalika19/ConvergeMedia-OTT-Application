@@ -37,6 +37,22 @@
           <Label id="texta4" text="a focus on our community’s issues, and equitable access to elected officials," fontSize = "20" translation="[50,550]" />
           <Label id="texta5" text="leadership, and governmental information." fontSize = "20" translation = "[50,590]" />
         </Group>
+
+        <LayoutGroup
+            id="buttons"
+            layoutDirection="horiz"
+            translation="[500,800]"
+            itemSpacings="[16]">
+            <Button
+                  id="donate_button"
+                  text="SUPPORT INDEPENDENT BLACK MEDIA"
+              height="60"
+              minWidth="100"
+              maxWidth="1000"
+              iconUri="pkg:/images/Donate-button.png"
+              focusedIconUri="pkg:/images/Donate-button.png"
+                  translation="[500, 800]" />
+          </LayoutGroup>
   </children>
 
   <script type="text/brightscript" uri="pkg:/components/AboutScreen/AboutScreen.brs" />
