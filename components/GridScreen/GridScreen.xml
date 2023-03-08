@@ -16,11 +16,12 @@
             rowItemSize="[[451,334]]"
             rowHeights="[448]"
             itemSize="[1980,400]"
-            rowLabelOffset="[[80,20]]"
+            rowLabelOffset="[[20,20]]"
             focusXOffset="[20]"
             showRowLabel="[true]"
             rowFocusAnimationStyle="fixedFocusWrap"
             variableWidthItems="[true]"
+	    rowLabelFont = "font:LargeBoldSystemFont"
             >
         </RowList>
                 <!-- Label with description of content.
@@ -30,7 +31,7 @@
         id="titleLabel"
         width="1020"
         vertAlign = "bottom"
-        translation="[500,170]"
+        translation="[60,170]"
         />
 
         <Label
