@@ -113,6 +113,9 @@ function toggleVisibility(screen as object)
   if screen.id = "FilmScreen"
     RenderFilmContent()
   end if
+  if screen.id = "ShowScreen"
+    RenderShowContent()
+  end if
 
 
 end function

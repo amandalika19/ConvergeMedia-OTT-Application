@@ -9,7 +9,7 @@
         <!-- Set loadWidth/loadHeight and loadDisplayMode for better performance -->
         <Poster
             id="poster"
-            loadDisplayMode="limitSize"
+            loadDisplayMode="scaleToFill"
             width="420"
             height="280"
             loadWidth="420"
