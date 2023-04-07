@@ -64,5 +64,7 @@
   <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/RenderScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/VideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/DetailsScreenLogic.brs" />
 
 </component>

@@ -25,7 +25,8 @@ sub init()
   m.FadeOut = m.top.findNode("FadeOut")
 
   RenderGridContent()
-  'RenderFilmContent()
+  
+
 
 end sub
 
@@ -35,6 +36,15 @@ function onKeyEvent(key as string, press as boolean) as boolean
   print "in ChannelStartup onKeyEvent ";key;" "; press
 
   if press
+    ' handle "back" key press
+    if key = "back"
+      numberOfScreens = m.screenStack.Count()
+      ' close top screen if there are two or more screens in the screen stack
+      if numberOfScreens > 1
+          CloseScreen(invalid)
+          result = true
+      end if
+    end if
     if m.top.visible = true and key = "up"
       m.Home.focusedColor = "0x4285F4"
       m.Home.setFocus(true)
@@ -82,6 +92,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
       end if
     else if m.About.hasFocus() = true
       if key = "down"
+        
       else if key = "right"
         m.Home.setFocus(true)
         m.Home.focusedColor = "0x4285F4"
@@ -95,6 +106,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
       end if
     end if
   end if
+  return  result
 end function
 
 function toggleVisibility(screen as object)
@@ -108,13 +120,19 @@ function toggleVisibility(screen as object)
 
   if screen.id = "HomeScreen"
     RenderGridContent()
+    UnrenderFilmContent()
+    UnrenderShowContent()
   end if
 
   if screen.id = "FilmScreen"
     RenderFilmContent()
+    UnrenderGridContent()
+    UnrenderShowContent()
   end if
   if screen.id = "ShowScreen"
     RenderShowContent()
+    UnrenderFilmContent()
+    UnrenderGridContent()
   end if
 
 

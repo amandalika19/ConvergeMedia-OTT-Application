@@ -10,10 +10,10 @@
         <Poster
             id="poster"
             loadDisplayMode="scaleToFill"
-            width="420"
-            height="280"
-            loadWidth="420"
-            loadHeight="280"
+            width="400"
+            height="197"
+            loadWidth="320"
+            loadHeight="180"
     />
     </children>
 </component>

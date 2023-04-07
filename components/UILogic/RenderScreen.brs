@@ -3,6 +3,7 @@ sub RenderGridContent()
   InitGridScreen()
   ShowGridScreen()
   RunContentTask("Grid")
+  print m.screenStack
 end sub
 
 sub RenderFilmContent()
@@ -10,12 +11,14 @@ sub RenderFilmContent()
   InitFilmScreen()
   ShowFilmScreen()
   RunContentTask("Film")
+  print m.screenStack
 end sub
 sub RenderShowContent()
   InitScreenStack()
   InitShowScreen()
   ShowShowScreen()
   RunContentTask("Show")
+  print m.screenStack
 end sub
 
 sub UnrenderGridContent()

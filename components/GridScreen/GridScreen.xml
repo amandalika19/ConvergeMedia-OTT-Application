@@ -13,16 +13,16 @@
             id="rowList"
             translation="[50,200]"
             numRows="5"
-            rowItemSize="[[421,284]]"
-            rowItemSpacing="[[30,0]]"
-            rowHeights="[448]"
+            rowItemSize="[[400,197]]"
+            rowItemSpacing="[[20,0]]"
+            
             itemSize="[1980,400]"
             rowLabelOffset="[[20,20]]"
             focusXOffset="[20]"
             showRowLabel="[true]"
-            rowFocusAnimationStyle="fixedFocusWrap"
+            rowFocusAnimationStyle="floatingFocus"
             variableWidthItems="[true]"
-	    rowLabelFont = "font:LargeBoldSystemFont"
+	        
             />
                 <!-- Label with description of content.
 	         wrap="true" and numLines="3" means that the text can be broken into three lines -->

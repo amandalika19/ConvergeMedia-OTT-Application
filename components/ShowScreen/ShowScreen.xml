@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component name="ShowScreen" extends="Group"  initialFocus="RowList">
+<component name="ShowScreen" extends="Group"  >
     <script type="text/brightscript" uri="ShowScreen.brs" />
     <script type="text/brightscript" uri="pkg:/source/utils.brs" />
 	<interface>
@@ -14,15 +14,18 @@
         <RowList
             itemComponentName="RowListItemComponent"
             id="rowList"
-            numRows= "5"
-            translation = "[0,550]"
-            rowitemSize="[[400,197]]"
+            translation="[0,550]"
+            numRows="5"
+            rowItemSize="[[400,197]]"
             rowItemSpacing="[[20,0]]"
+            rowHeights="[348]"
             itemSize="[1980,400]"
-            rowLabelOffset="[[50,30]]"
-            focusXOffset="[50]"
+            rowLabelOffset="[[20,20]]"
+            focusXOffset="[20]"
             showRowLabel="[true]"
             rowFocusAnimationStyle="floatingFocus"
+            variableWidthItems="[true]"
+	          
             >  
             </RowList>
             
@@ -39,7 +42,7 @@
         width = "1920"
         translation ="[2,120]"
         color = "0x000000FF"
-        opacity = "0.5"
+        opacity = "0.4"
         />
                  <!-- Passed into a Group node to to make the formatting easier. All child nodes inherit the translation field of Group -->
         <Group

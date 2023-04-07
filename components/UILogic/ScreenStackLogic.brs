@@ -4,6 +4,7 @@
 
 sub InitScreenStack()
     m.screenStack = []
+    
 end sub
 
 sub ShowScreen(node as Object)
