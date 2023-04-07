@@ -19,7 +19,7 @@
   <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
-  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderHome.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderScreen.brs" />
 
 
 </component>

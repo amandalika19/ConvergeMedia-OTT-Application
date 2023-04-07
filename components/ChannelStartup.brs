@@ -4,6 +4,7 @@
 sub init()
   'To see print statements/debug info, telnet on port 8089
   'print "HeroScene.brs - [init]"
+  m.top.backgroundUri = "https://t4.ftcdn.net/jpg/02/98/68/73/360_F_298687332_D0GAA6fAgr70NWtF8UKXPyLx0mTGug0x.jpg"
   m.NavBar = m.top.findNode("NavBar")
   m.Home = m.NavBar.findNode("Home")
   m.Show = m.NavBar.findNode("Show")
@@ -24,6 +25,7 @@ sub init()
   m.FadeOut = m.top.findNode("FadeOut")
 
   RenderGridContent()
+  'RenderFilmContent()
 
 end sub
 
@@ -31,9 +33,9 @@ end sub
 function onKeyEvent(key as string, press as boolean) as boolean
   result = false
   print "in ChannelStartup onKeyEvent ";key;" "; press
+
   if press
     if m.top.visible = true and key = "up"
-      print "------ [up to navbar] ------"
       m.Home.focusedColor = "0x4285F4"
       m.Home.setFocus(true)
     end if
@@ -60,10 +62,13 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Home.focusedColor = "0x4285F4"
       else if key = "OK"
         toggleVisibility(m.ShowScreen)
+        m.Show.setFocus(true)
+        m.Show.focusedColor = "0x4285F4"
       end if
     else if m.Film.hasFocus() = true
       if key = "down"
-        print "film down"
+        m.Film.setFocus(true)
+        m.Film.focusedColor = "0x4285F4"
       else if key = "right"
         m.About.setFocus(true)
         m.About.focusedColor = "0x4285F4"
@@ -71,11 +76,12 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Show.setFocus(true)
         m.Show.focusedColor = "0x4285F4"
       else if key = "OK"
+        print m.FilmScreen
         toggleVisibility(m.FilmScreen)
+        m.Film.focusedColor = "0x4285F4"
       end if
     else if m.About.hasFocus() = true
       if key = "down"
-        print "about down"
       else if key = "right"
         m.Home.setFocus(true)
         m.Home.focusedColor = "0x4285F4"
@@ -84,6 +90,8 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Film.focusedColor = "0x4285F4"
       else if key = "OK"
         toggleVisibility(m.AboutScreen)
+        m.About.setFocus(true)
+        m.About.focusedColor = "0x4285F4"
       end if
     end if
   end if
@@ -97,8 +105,14 @@ function toggleVisibility(screen as object)
   m.ShowScreen.visible = false
   screen.visible = true
 
+
   if screen.id = "HomeScreen"
     RenderGridContent()
   end if
+
+  if screen.id = "FilmScreen"
+    RenderFilmContent()
+  end if
+
 
 end function

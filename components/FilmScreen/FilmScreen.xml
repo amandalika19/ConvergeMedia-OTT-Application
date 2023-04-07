@@ -1,98 +1,74 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+<?xml version="1.0" encoding="UTF-8"?>
 
-<component name="FilmScreen" extends="Group" initialFocus="itemMask">
-
-  <children>
-
-    <!-- For transition animation -->
-    <FadingBackground
-      id="Background"
-      width="1920"
-      height="1080"
-      color="0x000000"
-      ShadeOpacity="0.9" />
-
-	<Poster
-		id="thumbnail"
-		uri="pkg:/images\finding-go-full.png"
-		loadDisplayMode = "scaleToFit"
-		width = "1920"
-		height = "1080"
-		translation="[0,20]"
-		opacity="0.1" />
-    <LayoutGroup
-		translation="[1000.0, 50.0]" 
-		vertAlignment="top"
-		horizAlignment="center"
-		itemSpacings="[16]">
-		<LayoutGroup 
-			id="layout_group"
-			translation="[450.0, 50.0]" 
-			itemSpacings="[10]"
-			horizAlignment="center">
-			<Label
-        		id="title"
-        		font="font:LargeBoldSystemFont"
-        		color="0xFFFFFF"
-				wrap="true"
-        		width="1920"
-				height="0"
-        		text="Finding Go"
-				horizAlign="center"
-        		translation="[0,50]" />
-    		<Label
-        		id="date"
-        		font="font:SmallSystemFont"
-        		color="0xFFFFFF"
-				width="1920"
-				horizAlign="center"
-        		translation="[50,130]" />
-			<Label
-				id="postType"
-				font="font:SmallSystemFont"
-				height="30"
-				width="1920"
-				color="0xB4B4B4"
-	    		text=""
-				horizAlign="center"
-	    		translation="[0,160]" />
-    		<ScrollableText
-        		id="description"
-        		font="font:MediumSystemFont"
-        		color="0xFFFFFF"
-        		width="1920"
-				height="460"
-        		text="Finding Go is a film documenting the life and legacy of Broderick Adé Hogue. An art director, designer, and letterer, Hogue’s influence was felt in many spheres across the country and even around the world. One of Hogue’s crowning achievements was creating the lettering for Our Commitment, a specially-designed 737 commissioned by Alaska Airlines in partnership with the United Negro College Fund to showcase their commitment to racial equality and education. By the time of Hogue’s death in the fall of 2021, he had impacted countless individuals through his presence and work. He is described as a true friend, an outgoing soul, and someone with an energy that made people want to be around him. This film chronicles his life from his early years in Asheville, NC, his college days at UNC Charlotte, and his eventual move to Chicago as his development into one of the best hand letterers of his generation."
-				lineSpacing="4.0"
-        		translation="[0,200]" />
-			<MarkupGrid 
-          		id = "attachmentsList" 
-          		itemComponentName = "AttachmentItem" 
-          		numColumns = "5" 
-          		numRows = "1" 
-          		itemSize = "[ 200, 100 ]" 
-          		itemSpacing = "[ 40, 0 ]" 
-          		vertFocusAnimationStyle="fixedFocus"
-          		drawFocusFeedback = "true" />
-    	</LayoutGroup>
-		<LayoutGroup
-			id="buttons"
-			layoutDirection="horiz"
-			translation="[120,600]"
-			itemSpacings="[16]">
-			<Button
-        		id="play_button"
-        		text="PLAY"
-				height="60"
-				minWidth="280"
-				maxWidth="280"
-				iconUri="pkg:/images/play.png"
-				focusedIconUri="pkg:/images/play.png"
-        		translation="[360, 600]" />
-		</LayoutGroup>
-	</LayoutGroup>
-  </children>
-
-
+<component name="FilmScreen" extends="Group" >
+    <script type="text/brightscript" uri="FilmScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+	<interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="node" alias="RowList.content" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+        <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
+    </interface>
+    <children>
+       
+        <RowList
+            itemComponentName="RowListItemComponent"
+            id="rowList"
+            translation="[50,200]"
+            numRows="5"
+            rowItemSize="[[421,284]]"
+            rowItemSpacing="[[30,0]]"
+            rowHeights="[448]"
+            itemSize="[1980,400]"
+            rowLabelOffset="[[20,20]]"
+            focusXOffset="[20]"
+            showRowLabel="[true]"
+            rowFocusAnimationStyle="floatingFocus"
+            >  
+            </RowList>
+            
+      
+        
+                <!-- Label with description of content.
+	         wrap="true" and numLines="3" means that the text can be broken into three lines -->
+                 <!-- Label with title and length of content -->
+         
+        <!-- Shaded Overhang to display the focused content in the RowList-->
+        <Rectangle
+        id = "Overhang"
+        height = "550"
+        width = "1920"
+        translation ="[2,580]"
+        color = "0x000000FF"
+        opacity = "1"
+        />
+                 <!-- Passed into a Group node to to make the formatting easier. All child nodes inherit the translation field of Group -->
+        <Group
+            translation = "[90,550]">
+        <!--  Content title of the item focused. This label inherits translation from Group node -->
+            <Label
+                id = "Title"
+                height = "30"
+                width = "650"
+                translation = "[0,90]"
+                font = "font:LargeBoldSystemFont"/>
+            <!-- Content description of the item focused . Also inherits translation from Group node -->
+            <Label
+                id = "Description"
+                height = "250"
+                width = "800"
+                color = "0xA3A3C2FF"
+                translation = "[0,150]"
+                wrap = "true"/>
+            <!-- Artwork of the item focused. Inherits translation of the Group node and adds onto the translation. Final translation on the screen is [150+850, 75+10] -->
+            <Poster
+                id = "poster"
+                height = "381"
+                width = "700"
+                loadWidth = "600"
+                loadHeight = "381"
+                loadDisplayMode = "scaleToFit"
+                translation = "[1050,85]"/>
+            </Group>
+    </children>
 </component>

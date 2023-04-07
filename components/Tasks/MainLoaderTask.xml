@@ -3,7 +3,9 @@
 
 <component name="MainLoaderTask" extends="Task">
     <interface>
-        <field id="content" type="node" />
+        <field id="contentSeries" type="node" />
+        <field id="contentFilm" type="node" />
+
     </interface>
 
     <script type="text/brightscript" uri="MainLoaderTask.brs" />
