@@ -16,7 +16,7 @@
             id="rowList"
             translation="[0,550]"
             numRows="5"
-            rowItemSize="[[400,197]]"
+            rowItemSize="[[400,230]]"
             rowItemSpacing="[[20,0]]"
             rowHeights="[348]"
             itemSize="[1980,400]"
