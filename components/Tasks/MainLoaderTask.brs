@@ -8,7 +8,7 @@ sub GetContent()
     ' request the content feed from the API
     xfer = CreateObject("roURLTransfer")
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-    xfer.SetURL("https://storageconverge.blob.core.windows.net/test/content-filmaddition.json")''"https://storageconverge.blob.core.windows.net/test/content-test.json")
+    xfer.SetURL("https://storageconverge.blob.core.windows.net/content-feed/ottContentFeed.json")
     rsp = xfer.GetToString()
     rootSeriesChildren = []
     rootFilmChildren = []
