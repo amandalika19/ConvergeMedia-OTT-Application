@@ -4,7 +4,7 @@
 sub init()
   'To see print statements/debug info, telnet on port 8089
   'print "HeroScene.brs - [init]"
-  m.top.backgroundUri = "https://t4.ftcdn.net/jpg/02/98/68/73/360_F_298687332_D0GAA6fAgr70NWtF8UKXPyLx0mTGug0x.jpg"
+  m.top.backgroundUri = "https://storageconverge.blob.core.windows.net/thumbnail-photo-test/backgroundGradient.png"
   m.NavBar = m.top.findNode("NavBar")
   m.Home = m.NavBar.findNode("Home")
   m.Show = m.NavBar.findNode("Show")
