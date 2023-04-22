@@ -28,6 +28,7 @@ sub OnDetailsScreenVisibilityChanged(event as Object) ' invoked when DetailsScre
     ' update GridScreen's focus when navigate back from DetailsScreen
     if visible = false
         m.ShowScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
+        m.FilmScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
         m.GridScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
     end if
 end sub
