@@ -1,4 +1,3 @@
 sub about()
-  m.background = m.top.findNode("Background")
-  m.Donate = m.top.findNode("Donate")
+  m.top.backgroundUri = "https://storageconverge.blob.core.windows.net/thumbnail-photo-test/background.png"
 end sub
