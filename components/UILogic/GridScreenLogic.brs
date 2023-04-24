@@ -5,6 +5,7 @@ end sub
 sub InitFilmScreen()
     m.FilmScreen = CreateObject("roSGNode", "FilmScreen")
 end sub
+
 sub InitShowScreen()
     m.ShowScreen = CreateObject("roSGNode", "ShowScreen")
 end sub
@@ -23,10 +24,11 @@ sub ShowFilmScreen()
     ShowScreen(m.FilmScreen) ' show GridScreen
     m.FilmScreen.visible = true
 end sub
+
 sub ShowShowScreen()
     m.ShowScreen.ObserveField("rowItemSelected", "OnShowScreenItemSelected")
     ShowScreen(m.ShowScreen) ' show GridScreen
-    m.ShowScreen.visible = true
+    'm.ShowScreen.visible = true
 end sub
 
 sub RemoveFilmScreen()

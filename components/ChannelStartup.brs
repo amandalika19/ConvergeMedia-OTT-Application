@@ -25,15 +25,12 @@ sub init()
   m.FadeOut = m.top.findNode("FadeOut")
 
   RenderGridContent()
-  
-
-
 end sub
 
 
 function onKeyEvent(key as string, press as boolean) as boolean
   result = false
-  print "in ChannelStartup onKeyEvent ";key;" "; press
+ print "in ChannelStartup onKeyEvent ";key;" "; press
 
   if press
     ' handle "back" key press
@@ -60,10 +57,15 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.About.setFocus(true)
         m.About.focusedColor = "0x4285F4"
       else if key = "OK"
-        toggleVisibility(m.HomeScreen)
+        ' toggleVisibility(m.HomeScreen)
+        m.Home.focusedColor = "0x4285F4"
+        UnrenderContent()
+        RenderGridContent()
       end if
     else if m.Show.hasFocus() = true
-      if key = "show down"
+      print "show has focus"
+      if key = "down"
+        toggleVisibility(m.ShowScreen)
       else if key = "right"
         m.Film.setFocus(true)
         m.Film.focusedColor = "0x4285F4"
@@ -71,12 +73,14 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Home.setFocus(true)
         m.Home.focusedColor = "0x4285F4"
       else if key = "OK"
-        toggleVisibility(m.ShowScreen)
-        m.Show.setFocus(true)
+        UnrenderContent()
+        RenderShowContent()
         m.Show.focusedColor = "0x4285F4"
+
       end if
     else if m.Film.hasFocus() = true
       if key = "down"
+        toggleVisibility(m.FilmScreen)
         m.Film.setFocus(true)
         m.Film.focusedColor = "0x4285F4"
       else if key = "right"
@@ -86,13 +90,13 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Show.setFocus(true)
         m.Show.focusedColor = "0x4285F4"
       else if key = "OK"
-        print m.FilmScreen
-        toggleVisibility(m.FilmScreen)
-        m.Film.focusedColor = "0x4285F4"
+        UnrenderContent()
+        RenderFilmContent()
+         m.Film.focusedColor = "0x4285F4"
       end if
     else if m.About.hasFocus() = true
       if key = "down"
-        
+        print "no interaction for about page yet"
       else if key = "right"
         m.Home.setFocus(true)
         m.Home.focusedColor = "0x4285F4"
@@ -110,30 +114,11 @@ function onKeyEvent(key as string, press as boolean) as boolean
 end function
 
 function toggleVisibility(screen as object)
-  UnrenderGridContent()
+  print screen 
   m.AboutScreen.visible = false
   m.HomeScreen.visible = false
   m.FilmScreen.visible = false
   m.ShowScreen.visible = false
   screen.visible = true
-
-
-  if screen.id = "HomeScreen"
-    RenderGridContent()
-    UnrenderFilmContent()
-    UnrenderShowContent()
-  end if
-
-  if screen.id = "FilmScreen"
-    RenderFilmContent()
-    UnrenderGridContent()
-    UnrenderShowContent()
-  end if
-  if screen.id = "ShowScreen"
-    RenderShowContent()
-    UnrenderFilmContent()
-    UnrenderGridContent()
-  end if
-
 
 end function

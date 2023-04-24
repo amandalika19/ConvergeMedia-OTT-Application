@@ -27,6 +27,7 @@ sub OnMainContentLoadedFilm() ' invoked when content is ready to be used
     'm.loadingIndicator.visible = false ' hide loading indicator because content was retrieved
     m.FilmScreen.content = m.contentTask.contentFilm ' populate GridScreen with content
 end sub
+
 sub OnMainContentLoadedShow() ' invoked when content is ready to be used
     m.ShowScreen.SetFocus(true) ' set focus to GridScreen
     'm.loadingIndicator.visible = false ' hide loading indicator because content was retrieved
