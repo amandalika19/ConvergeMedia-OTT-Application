@@ -18,7 +18,7 @@
         width = "1920" 
         height = "1045" 
         translation="[0,0]" 
-        opacity="0.2" />
+        opacity="0.3" />
 
       <Group>
         <Label 
