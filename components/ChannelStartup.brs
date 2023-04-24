@@ -61,6 +61,8 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Home.focusedColor = "0x4285F4"
         UnrenderContent()
         RenderGridContent()
+        toggleVisibility(m.HomeScreen)
+
       end if
     else if m.Show.hasFocus() = true
       print "show has focus"
@@ -75,6 +77,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
       else if key = "OK"
         UnrenderContent()
         RenderShowContent()
+        toggleVisibility(m.ShowScreen)
         m.Show.focusedColor = "0x4285F4"
 
       end if
@@ -92,6 +95,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
       else if key = "OK"
         UnrenderContent()
         RenderFilmContent()
+        toggleVisibility(m.FilmScreen)
          m.Film.focusedColor = "0x4285F4"
       end if
     else if m.About.hasFocus() = true
