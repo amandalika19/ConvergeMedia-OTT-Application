@@ -112,7 +112,7 @@
           translation = "[1370,580]" />
         <Label 
           id="text_find_us_youtube" 
-          text="@ConvergeMeida" 
+          text="@ConvergeMedia" 
           opacity="0.7"
           translation = "[1370,660]" />
         <Label 
