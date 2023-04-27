@@ -27,7 +27,7 @@
             />
         <Label
         id="titleLabel"
-        width="1020"
+        width="2020"
         vertAlign = "bottom"
         translation="[60,500]"
         font = "font:SmallestSystemFont" 
