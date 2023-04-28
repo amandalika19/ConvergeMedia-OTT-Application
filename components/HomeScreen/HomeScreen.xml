@@ -5,13 +5,13 @@
 
   <children>
 
-    <!-- For transition animation -->
+    <!-- For transition animation
     <FadingBackground
       id="Background"
       width="1920"
       height="1080"
       color="0x000000"
-      ShadeOpacity="0.9" />
+      ShadeOpacity="0.9" /> -->
 
   </children>
 
@@ -19,7 +19,9 @@
   <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
   <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
-  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderHome.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/VideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/DetailsScreenLogic.brs" />
 
 
 </component>

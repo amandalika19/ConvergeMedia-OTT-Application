@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
 
-<component name="GridScreen" extends="Group"  initialFocus="RowList">
+<component name="GridScreen" extends="Group">
     <script type="text/brightscript" uri="GridScreen.brs" />
 	 <interface>
         <!-- Specifies the content for the Grid -->
         <field id="content" type="node" alias="RowList.content" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+        <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
     </interface>
     <children>
         <RowList
@@ -21,12 +23,8 @@
             showRowLabel="[true]"
             rowFocusAnimationStyle="floatingFocus"
             variableWidthItems="[true]"
-	        font = "font:LargeBoldSystemFont" 
-            >
-        </RowList>
-                <!-- Label with description of content.
-	         wrap="true" and numLines="3" means that the text can be broken into three lines -->
-                 <!-- Label with title and length of content -->
+            font = "font:LargeBoldSystemFont" />
+
         <Label
         id="titleLabel"
         width="2020"

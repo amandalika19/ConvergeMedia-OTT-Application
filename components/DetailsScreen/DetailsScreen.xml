@@ -1,20 +1,95 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+<?xml version="1.0" encoding="utf-8" ?> 
 
-<component name="DetailsScreen" extends="Group" initialFocus="">
-
-  <children>
-
-    <!-- For transition animation -->
-    <FadingBackground
-      id="Background"
-      width="1920"
-      height="1080"
-      color="0x000000"
-      ShadeOpacity="0.9" />
-
-  </children>
-
-  <script type="text/brightscript" uri="pkg:/components/DetailsScreen/DetailsScreen.brs" />
-
+<component name="DetailsScreen" extends="Group" initialFocus="Buttons">
+    <script type="text/brightscript" uri="DetailsScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <interface>
+        <!-- Content fields -->
+        <field id="content" type="node" />
+        <!-- @WriteOnly  -->
+        <!-- Manually focus on desired item. This field must be set after setting the content field. -->
+        <field id="jumpToItem" type="integer" onChange="OnJumpToItem" value="0" alwaysNotify="true" />
+        <!-- tells what item is currently focused  -->
+        <field id="itemFocused" type="integer" alwaysNotify="true" />     
+        <field id="buttonSelected" type="integer" alias="buttons.itemSelected" />
+    </interface>
+    <children>
+        
+        <Poster
+            id="poster"
+            
+            width="1920"
+            loadWidth="1080"
+            height="1280"
+            loadHeight="720"
+            loadDisplayMode="scaleToFill">
+            
+        
+        </Poster>
+        <Rectangle
+            id = "shader"
+            width = "1920"
+            height ="1080"
+            color = "0x000000FF"
+            opacity = "0.8"
+            />
+        
+        <LayoutGroup
+            translation="[1166, 154]"
+            
+            itemSpacings="[40]">
+            <LayoutGroup
+                itemSpacings="[14, 10]"
+                layoutDirection="vert">
+                
+                <Label
+                    id="titleLabel"
+                    width="357"
+                    wrap="false"
+                    horizAlign="right"
+                />
+              
+            </LayoutGroup>
+            <Group>
+                <LabelList
+                    id="buttons"
+                    textColor ="#FFFFFF"
+                    focusBitmapUri = "https://htmlcolorcodes.com/assets/images/colors/bright-blue-color-solid-background-1920x1080.png"
+                    itemSpacing="[0,10]"
+                    itemSize="[200, 48]"
+                />
+                <Label
+                    id="timeLabel"
+                    width="357"
+                    wrap="false"
+                    translatiom = "[1200, 154]"
+                    
+                />
+                <LayoutGroup
+                    itemSpacings="[40]"
+                    translation="[0, 208]">
+                    <Label
+                        id="descriptionLabel"
+                        leadingEllipsis = "true"
+                        wrap = "true"
+                        font="font:MediumBoldSystemFont"
+                        vertAlign = "center"
+                        translation="[318,8]"
+                        width="593"
+                    />
+                    <Label
+                        id="timeLabel"
+                        width="357"
+                        wrap="false"
+                        horizAlign="right"
+                    />
+                    <Label
+                        id="releaseLabel"
+                        wrap="false"
+                        width="520"
+                    />
+                </LayoutGroup>
+            </Group>
+        </LayoutGroup>
+    </children>
 </component>
