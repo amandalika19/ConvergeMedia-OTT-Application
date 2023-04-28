@@ -23,8 +23,8 @@
             showRowLabel="[true]"
             rowFocusAnimationStyle="floatingFocus"
             variableWidthItems="[true]"
-	        
-            />
+            font = "font:LargeBoldSystemFont" />
+
         <Label
         id="titleLabel"
         width="2020"
