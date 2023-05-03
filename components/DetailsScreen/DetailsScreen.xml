@@ -121,7 +121,7 @@
         		width="1920"
 				height="460"
         		
-				lineSpacing="4.0"
-        		translation="[90,750]" />
+				lineSpacing="5.0"
+        		translation="[70,750]" />
     </children>
 </component>
