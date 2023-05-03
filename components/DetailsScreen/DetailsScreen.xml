@@ -107,12 +107,21 @@
             translation = "[100,690]"
         />
         
-        <Label
+        <!-- <Label
             id="descriptionLabel"
             height="950"
             width="1000"
             
             translation="[100,750]"
-            wrap="true" />
+            wrap="true" /> -->
+            <ScrollableText
+        		id="descriptionLabel"
+        		
+        		color="0xFFFFFF"
+        		width="1920"
+				height="460"
+        		
+				lineSpacing="4.0"
+        		translation="[90,750]" />
     </children>
 </component>
