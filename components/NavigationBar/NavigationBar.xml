@@ -69,15 +69,14 @@
         <ContentNode id = "AboutNode" role = "content" >
           <ContentNode title = "About Us"/>
         </ContentNode>
-      </LabelList>
+      </LabelList>  
+    </Group> 
       <Rectangle 
         color = "0x00000" 
         width="800"
         height="150"
         translation="[1280,0]"
         />
-      
-    </Group> 
   </children>
 
   <script type="text/brightscript" uri="pkg:/components/NavigationBar/NavigationBar.brs" />
