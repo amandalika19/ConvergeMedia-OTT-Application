@@ -10,11 +10,23 @@
         <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
     </interface>
     <children>
-    
+        <Rectangle
+        id="featuredBanner"
+        height = "300"
+        width = "1920"
+        translation ="[2,120]">
+        <Poster
+            id="featured"
+            uri="https://storageconverge.blob.core.windows.net/seriesbanners/featured-3.png"
+            height = "300"
+            width = "1920"
+        />
+        </Rectangle>
+
         <RowList
             itemComponentName="RowListItemComponent"
             id="rowList"
-            translation="[50,175]"
+            translation="[50,450]"
             numRows="5"
             rowItemSize="[[400,230]]"
             rowItemSpacing="[[20,0]]"
@@ -30,7 +42,7 @@
         id="titleLabel"
         width="2020"
         vertAlign = "bottom"
-        translation="[60,500]"
+        translation="[60,750]"
         font = "font:SmallestSystemFont" 
         color = "#AEBCD6"
         />
