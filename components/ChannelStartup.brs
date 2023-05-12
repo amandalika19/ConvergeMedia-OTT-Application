@@ -31,13 +31,14 @@ end sub
 function onKeyEvent(key as string, press as boolean) as boolean
   result = false
  print "in ChannelStartup onKeyEvent ";key;" "; press
-
+  
   if press
     ' handle "back" key press
     if key = "back"
+
       numberOfScreens = m.screenStack.Count()
       ' close top screen if there are two or more screens in the screen stack
-      if numberOfScreens > 1
+      if numberOfScreens > 0
           CloseScreen(invalid)
           result = true
       end if
@@ -49,7 +50,10 @@ function onKeyEvent(key as string, press as boolean) as boolean
     if m.Home.hasFocus() = true 
       if key = "down"
         m.HomeScreen.setFocus(true)
+        UnrenderContent()
+        RenderGridContent()
         toggleVisibility(m.HomeScreen)
+        m.Home.focusedColor = "0x4285F4"
       else if key = "right"
         m.Show.setFocus(true)
         m.Show.focusedColor = "0x4285F4"
@@ -57,17 +61,19 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.About.setFocus(true)
         m.About.focusedColor = "0x4285F4"
       else if key = "OK"
-        ' toggleVisibility(m.HomeScreen)
         m.Home.focusedColor = "0x4285F4"
         UnrenderContent()
         RenderGridContent()
         toggleVisibility(m.HomeScreen)
-
       end if
     else if m.Show.hasFocus() = true
       print "show has focus"
       if key = "down"
+        UnrenderContent()
+        RenderShowContent()
         toggleVisibility(m.ShowScreen)
+        m.Show.focusedColor = "0x4285F4"
+       
       else if key = "right"
         m.Film.setFocus(true)
         m.Film.focusedColor = "0x4285F4"
@@ -83,8 +89,10 @@ function onKeyEvent(key as string, press as boolean) as boolean
       end if
     else if m.Film.hasFocus() = true
       if key = "down"
+        UnrenderContent()
+        RenderFilmContent()
         toggleVisibility(m.FilmScreen)
-        m.Film.setFocus(true)
+        ' m.Film.setFocus(true)
         m.Film.focusedColor = "0x4285F4"
       else if key = "right"
         m.About.setFocus(true)
@@ -109,8 +117,8 @@ function onKeyEvent(key as string, press as boolean) as boolean
         m.Film.focusedColor = "0x4285F4"
       else if key = "OK"
         toggleVisibility(m.AboutScreen)
-        m.About.setFocus(true)
-        m.About.focusedColor = "0x4285F4"
+        ' m.About.setFocus(true)
+        ' m.About.focusedColor = "0x4285F4"
       end if
     end if
   end if
@@ -118,11 +126,13 @@ function onKeyEvent(key as string, press as boolean) as boolean
 end function
 
 function toggleVisibility(screen as object)
-  print screen 
   m.AboutScreen.visible = false
   m.HomeScreen.visible = false
   m.FilmScreen.visible = false
   m.ShowScreen.visible = false
   screen.visible = true
+
+  screen.setFocus(true)
+  screen.focusedColor = "0x4285F4"
 
 end function

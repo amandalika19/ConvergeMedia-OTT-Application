@@ -1,4 +1,7 @@
 sub init()
+    
+    m.top.ObserveField("visible", "onVisibleChange")
+
     m.rowList = m.top.FindNode("rowList")
     m.rowList.SetFocus(true)
     ' label with item description
@@ -23,6 +26,12 @@ sub OnItemFocused() ' invoked when another item is focused
         m.titleLabel.text += " | " + GetTime(item.length)
     end if
 end sub
+
+sub OnVisibleChange() ' invoked when GridScreen change visibility
+    if m.top.visible = true
+        m.rowList.SetFocus(true) ' set focus to rowList if GridScreen visible
+    end if
+  end sub
 
 ' this method convert seconds to mm:ss format
 ' getTime(138) returns 2:18

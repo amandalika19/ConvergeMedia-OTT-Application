@@ -3,16 +3,22 @@
 
 sub ShowDetailsScreen(content as Object, selectedItem as Integer)
     ' create new instance of details screen
-    detailsScreen = CreateObject("roSGNode", "DetailsScreen")
-    detailsScreen.content = content
-    detailsScreen.jumpToItem = selectedItem ' set index of item which should be focused
-    detailsScreen.ObserveField("visible", "OnDetailsScreenVisibilityChanged")
-    detailsScreen.ObserveField("buttonSelected", "OnButtonSelected")
-    ShowScreen(detailsScreen)
+    m.detailsScreen = CreateObject("roSGNode", "DetailsScreen")
+    m.detailsScreen.content = content
+    m.detailsScreen.jumpToItem = selectedItem ' set index of item which should be focused
+    m.detailsScreen.ObserveField("visible", "OnDetailsScreenVisibilityChanged")
+    m.detailsScreen.ObserveField("buttonSelected", "OnButtonSelected")
+    ShowScreen(m.detailsScreen)
 end sub
+
+' sub CloseDetailsScreen()
+'     CloseScreen(m.detailsScreen)
+' end sub
+
 
 sub OnButtonSelected(event) ' invoked when button in DetailsScreen is pressed
     details = event.GetRoSGNode()
+    print details
     content = details.content
     buttonIndex = event.getData() ' index of selected button
     selectedItem = details.itemFocused
@@ -24,11 +30,11 @@ end sub
 
 sub OnDetailsScreenVisibilityChanged(event as Object) ' invoked when DetailsScreen "visible" field is changed
     visible = event.GetData()
-    detailsScreen = event.GetRoSGNode()
+    m.detailsScreen = event.GetRoSGNode()
     ' update GridScreen's focus when navigate back from DetailsScreen
     if visible = false
-        m.ShowScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
-        m.FilmScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
-        m.GridScreen.jumpToRowItem = [m.selectedIndex[0], detailsScreen.itemFocused]
+        m.ShowScreen.jumpToRowItem = [m.selectedIndex[0], m.detailsScreen.itemFocused]
+        m.FilmScreen.jumpToRowItem = [m.selectedIndex[0], m.detailsScreen.itemFocused]
+        m.GridScreen.jumpToRowItem = [m.selectedIndex[0], m.detailsScreen.itemFocused]
     end if
 end sub
