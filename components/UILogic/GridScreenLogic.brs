@@ -13,11 +13,6 @@ end sub
 sub ShowGridScreen()
     m.GridScreen.ObserveField("rowItemSelected", "OnGridScreenItemSelected")
     ShowScreen(m.GridScreen) ' show GridScreen
-
-end sub
-
-sub RemoveGridScreen()
-    CloseScreen(m.GridScreen)
 end sub
 
 sub ShowFilmScreen()
@@ -31,12 +26,22 @@ sub ShowShowScreen()
     ShowScreen(m.ShowScreen) ' show GridScreen
 end sub
 
+sub ShowAboutScreen()
+    ShowScreen(m.AboutScreen) ' show GridScreen
+end sub
+
 sub RemoveFilmScreen()
+    CloseScreen(m.FilmScreen)
     m.FilmScreen.visible = false
 end sub
 
 sub RemoveShowScreen()
+    CloseScreen(m.ShowScreen)
     m.ShowScreen.visible = false
+end sub
+
+sub RemoveGridScreen()
+    CloseScreen(m.GridScreen)
 end sub
 
 

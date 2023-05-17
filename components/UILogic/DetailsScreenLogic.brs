@@ -11,9 +11,9 @@ sub ShowDetailsScreen(content as Object, selectedItem as Integer)
     ShowScreen(m.detailsScreen)
 end sub
 
-' sub CloseDetailsScreen()
-'     CloseScreen(m.detailsScreen)
-' end sub
+sub CloseDetailsScreen()
+    CloseScreen(m.detailsScreen)
+end sub
 
 
 sub OnButtonSelected(event) ' invoked when button in DetailsScreen is pressed
