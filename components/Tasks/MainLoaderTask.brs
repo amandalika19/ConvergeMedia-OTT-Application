@@ -8,29 +8,62 @@ sub GetContent()
     ' request the content feed from the API
     xfer = CreateObject("roURLTransfer")
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-    ' xfer.SetURL("https://storageconverge.blob.core.windows.net/content-feed/ottContentFeed.json")''"https://storageconverge.blob.core.windows.net/test/content-test.json")
-    xfer.SetURL("https://convergemedia.azurewebsites.net/videos/series/1")
-    rsp = xfer.GetToString()
+    url_show_list = ["https://convergemedia.azurewebsites.net/videos/series/5",
+    "https://convergemedia.azurewebsites.net/videos/series/7",
+    "https://convergemedia.azurewebsites.net/videos/series/8",
+    "https://convergemedia.azurewebsites.net/videos/series/9"]
+    show_title = ["The Truth With Proof", "Art of The Matter", "Support Black Business","The Morning Update Show"]
+    url_film_list = []
+    film_title = []
     rootSeriesChildren = []
     rootFilmChildren = []
-    json = ParseJson(rsp)
-    if json <> invalid
-        for each category in json
+    if Count(url_show_list) > 0
+        for x = 0 To Count(url_show_list)
+            xfer.SetURL(url_show_list[x])
+            rsp = xfer.GetToString()
+            json = ParseJson(rsp)
             row = {}
-            row.title = category.title
             row.children = []
-            itemData = GetItemData(category)
-            row.children.Push(itemData)
-            rootSeriesChildren.Push(row)
+            row.title = show_title[x]
+            if json <> invalid
+                for each category in json
+                    itemData = GetItemData(category)
+                    row.children.Push(itemData)
+                    rootSeriesChildren.Push(row)
+                end for
+            end if
         end for
-        ' set up a root ContentNode to represent rowList on the GridScreen
-        contentSeriesNode = CreateObject("roSGNode", "ContentNode")
-        contentSeriesNode.Update({
-            children: rootSeriesChildren
-        }, true)
-
-        m.top.contentSeries = contentSeriesNode
     end if
+
+    if Count(url_film_list) > 0
+        for y = 0 To Count(url_film_list)
+            xfer.SetURL(url_film_list[x])
+            rsp = xfer.GetToString()
+            json = ParseJson(rsp)
+            row = {}
+            row.children = []
+            row.title = film_title[x]
+            if json <> invalid
+                for each category in json
+                    itemData = GetItemData(category)
+                    row.children.Push(itemData)
+                    rootFilmChildren.Push(row)
+                end for
+            end if
+        end for
+    end if
+    ' set up a root ContentNode to represent rowList on the GridScreen
+    contentSeriesNode = CreateObject("roSGNode", "ContentNode")
+    contentSeriesNode.Update({
+        children: rootSeriesChildren
+    }, true)
+    contentFilmilmNode = CreateObject("roSGNode", "ContentNode")
+    contentFilmilmNode.Update({
+        children: rootFilmChildren
+    }, true)
+
+    m.top.contentSeries = contentSeriesNode
+    m.top.contentFilm = contentFilmilmNode
 end sub
 
 function GetItemData(video as Object) as Object
@@ -48,7 +81,7 @@ function GetItemData(video as Object) as Object
     item.releaseDate = video.uploadDate
     item.id = video.id
     item.length = video.runtime
-    item.url = video.source
+    item.url = video.source[0]
 
     return item
 end function
