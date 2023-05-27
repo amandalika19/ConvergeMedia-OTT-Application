@@ -13,12 +13,12 @@ sub GetContent()
     "https://convergemedia.azurewebsites.net/videos/series/8",
     "https://convergemedia.azurewebsites.net/videos/series/9"]
     show_title = ["The Truth With Proof", "Art of The Matter", "Support Black Business","The Morning Update Show"]
-    url_film_list = []
-    film_title = []
+    url_film_list = ["https://convergemedia.azurewebsites.net/videos/series/10"]
+    film_title = ["Finding Go"]
     rootSeriesChildren = []
     rootFilmChildren = []
-    if Count(url_show_list) > 0
-        for x = 0 To Count(url_show_list)
+    if url_show_list.Count() > 0
+        for x = 0 To url_show_list.Count()-1
             xfer.SetURL(url_show_list[x])
             rsp = xfer.GetToString()
             json = ParseJson(rsp)
@@ -35,8 +35,8 @@ sub GetContent()
         end for
     end if
 
-    if Count(url_film_list) > 0
-        for y = 0 To Count(url_film_list)
+    if url_film_list.Count() > 0
+        for y = 0 To url_film_list.Count()-1
             xfer.SetURL(url_film_list[x])
             rsp = xfer.GetToString()
             json = ParseJson(rsp)
