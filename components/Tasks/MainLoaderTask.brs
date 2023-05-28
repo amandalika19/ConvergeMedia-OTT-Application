@@ -37,12 +37,12 @@ sub GetContent()
 
     if url_film_list.Count() > 0
         for y = 0 To url_film_list.Count()-1
-            xfer.SetURL(url_film_list[x])
+            xfer.SetURL(url_film_list[y])
             rsp = xfer.GetToString()
             json = ParseJson(rsp)
             row = {}
             row.children = []
-            row.title = film_title[x]
+            row.title = film_title[y]
             if json <> invalid
                 for each category in json
                     itemData = GetItemData(category)
